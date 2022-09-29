@@ -1,7 +1,7 @@
-import { produce } from 'immer'
 import create from 'zustand'
 
 import { AuthResponse } from '@/dtos'
+import { localStorageService } from '@/services'
 
 type UserProps = {
   name: string
@@ -10,6 +10,7 @@ type UserProps = {
 
 type UseAuthProps = {
   user: UserProps | null
+  setUser: (user: UserProps) => void
   login: (data: AuthResponse) => void
   logout: () => void
 }
@@ -17,12 +18,17 @@ type UseAuthProps = {
 export const authStore = create<UseAuthProps>((set) => ({
   user: null,
 
-  login: ({ user }) =>
-    set((state) =>
-      produce(state, (draft) => {
-        draft.user = user
-      }),
-    ),
+  setUser: (data) => {
+    set({ user: data })
+  },
 
-  logout: () => set({ user: null }),
+  login: ({ user }) => {
+    localStorageService.setItem('user', user)
+    set({ user })
+  },
+
+  logout: () => {
+    localStorageService.removeItem('user')
+    set({ user: null })
+  },
 }))

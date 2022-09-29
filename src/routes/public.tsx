@@ -4,6 +4,8 @@ import { DefaultLayout } from '@/components/templates/DefaultLayout'
 import { LoginPage } from '@/pages/LoginPage'
 
 export const Public = () => {
+  console.log('public route')
+
   const location = useLocation()
 
   const publicRoutes = [
