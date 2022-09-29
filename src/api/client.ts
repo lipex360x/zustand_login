@@ -1,7 +1,9 @@
 import axios from 'axios'
 
-import { API_BASE_URL } from '@/constants/environment'
+// import { API_BASE_URL } from '@/constants/environment'
 
-export const api = axios.create({
-  baseURL: API_BASE_URL,
+const api = axios.create({
+  baseURL: 'http://localhost:3333',
 })
+
+export default api

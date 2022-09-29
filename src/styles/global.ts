@@ -44,6 +44,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
       font-family: 'Roboto';
+      background: ${theme.color.gray900};
       font-size: ${theme.font.size.medium};
       color: ${theme.color.black};
     }
