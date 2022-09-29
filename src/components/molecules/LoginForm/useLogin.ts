@@ -13,12 +13,11 @@ export const useLogin = () => {
     loginWithEmailAndPassword,
     {
       onSuccess(data) {
-        if (data.token) {
-          login(data)
-          navigate('/dashboard')
-        } else {
-          toastService.error('User not found')
-        }
+        login(data)
+        navigate('/dashboard')
+      },
+      onError() {
+        toastService.error('User not found')
       },
     },
   )

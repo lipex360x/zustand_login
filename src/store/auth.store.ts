@@ -3,14 +3,9 @@ import create from 'zustand'
 import { AuthResponse } from '@/dtos'
 import { localStorageService } from '@/services'
 
-type UserProps = {
-  name: string
-  email: string
-}
-
 type UseAuthProps = {
-  user: UserProps | null
-  setUser: (user: UserProps) => void
+  user: AuthResponse
+  setUser: (user: AuthResponse) => void
   login: (data: AuthResponse) => void
   logout: () => void
 }
@@ -22,9 +17,9 @@ export const authStore = create<UseAuthProps>((set) => ({
     set({ user: data })
   },
 
-  login: ({ user }) => {
-    localStorageService.setItem('user', user)
-    set({ user })
+  login: (data) => {
+    localStorageService.setItem('user', data)
+    set({ user: data })
   },
 
   logout: () => {

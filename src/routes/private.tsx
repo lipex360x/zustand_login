@@ -1,17 +1,16 @@
-import { Navigate, useLocation, useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 
 import { PrivateLayout } from '@/components/templates/PrivateLayout'
 import { DashboardPage } from '@/pages/DashboardPage'
+import { NotFoundPage } from '@/pages/NotFoundPage'
 import { UserPage } from '@/pages/UserPage'
 
 export const Private = () => {
   console.log('private route')
 
-  const location = useLocation()
-
   const privateRoutes = [
     {
-      path: '/',
+      path: '/dashboard',
       element: <DashboardPage />,
     },
 
@@ -19,17 +18,17 @@ export const Private = () => {
       path: '/user',
       element: <UserPage />,
     },
+    {
+      path: '/not-found',
+      element: <NotFoundPage />,
+    },
   ]
 
   return useRoutes([
     {
       path: '/',
       element: <PrivateLayout />,
-      children: privateRoutes,
-    },
-    {
-      path: '*',
-      element: <Navigate to="/" state={{ from: location }} replace />,
+      children: [...privateRoutes, { path: '*', element: <NotFoundPage /> }],
     },
   ])
 }

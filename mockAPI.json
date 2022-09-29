@@ -19,21 +19,71 @@
           "latency": 0,
           "statusCode": 200,
           "label": "",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
+          "headers": [],
           "filePath": "",
           "sendFileAsBody": false,
           "rules": [
             {
               "target": "body",
-              "modifier": "",
-              "value": "",
+              "modifier": "username",
+              "value": "1",
               "invert": false,
               "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "1",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "e1e801cb-5919-4c7c-9e6c-101a184998f4",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "a89f802c-e8b8-40b6-8af2-59f131248371",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "14e6187a-611d-49a2-88ea-4df5cedd9bcc",
+          "body": "{\n  \"logged\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "",
+              "invert": true,
+              "operator": "null"
             }
           ],
           "rulesOperator": "OR",
@@ -42,15 +92,23 @@
           "default": true
         },
         {
-          "uuid": "e1e801cb-5919-4c7c-9e6c-101a184998f4",
+          "uuid": "61b07040-32a6-4cf6-adaa-e2967718ba55",
           "body": "{}",
-          "latency": 500,
-          "statusCode": 200,
+          "latency": 0,
+          "statusCode": 401,
           "label": "",
           "headers": [],
           "filePath": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "",
+              "invert": false,
+              "operator": "null"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,

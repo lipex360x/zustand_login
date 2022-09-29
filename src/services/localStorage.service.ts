@@ -1,4 +1,4 @@
-export const setItem = (key: string, item: string | object) => {
+export const setItem = (key: string, item: string | object | null) => {
   const value = typeof item === 'object' ? JSON.stringify(item) : item
   return window.localStorage.setItem(key, value)
 }
