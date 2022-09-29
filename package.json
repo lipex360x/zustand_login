@@ -1,9 +1,8 @@
 {
-  "name": "react-boilerplate",
+  "name": "zustand-login",
   "private": true,
   "version": "0.0.0",
   "type": "commonjs",
-  "proxy": "http://localhost:3333",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

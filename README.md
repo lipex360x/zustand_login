@@ -1,86 +1,55 @@
-<h2 align="center">React Boilerplate</h2>
-<p align="center">React + Typescript Boilerplate with Vite</p>
+<h2 align="center">Zustand Login</h2>
+<p align="center">State Management with Protected Routes</p>
 
 ---
 
 <p align="center">
-  <img src="https://github.com/lipex360x/ViteTS-Boilerplate/blob/main/assets/screen.png" />
+  <img src="https://github.com/lipex360x/zustand_login/blob/main/assets/screen.png" />
 </p>
 
 ---
 
 #### :bookmark_tabs: Content Index
 
-- [Introduction](#zap-introduction)
 
 - [Startup](#zap-startup)
 
-- [Changeble Points](#zap-changeble-points)
-
-- [Generate Modules/Pages](#zap-generator)
-
 - [Technologies](#zap-technologies)
-
-- [Live Preview](https://react-gen-boilerplate.netlify.app/)
-
----
-
-#### :zap: Introduction
-
-This is a boilerplate for React Project using Atomic Design with generator
 
 ---
 
 #### :zap: Startup
 
-- Start project with this Templante
+##### - Mockoon
+
+- Install [Mockoon](https://mockoon.com/download/) API Mock and open **mockoonAPI.json**
+
+- Start Mockoon Server
+
+##### - Project
+
+- Clone this project
 
 - Install dependencies with `yarn` or `npm install`
 
-- run `yarn dev` or `npm run dev`
+- Run `yarn dev` or `npm run dev`
 
----
+- Default Login
 
-#### :zap: Changeble points
+  * username: hello
 
-- Configure **Project Name** in `./package.json`
+  * password: 1234
 
-- Configure **Project Title in** `./index.html`
-
-- Configure **Theme Styles** in `src/styles/constants`
-
-- Configure **Global Styles** in `src/styles/global.ts`
-
-- Configure **Theme** in `src/styles/themes/default.ts`
-
-- Rename `.env.example` to `.env` and change API address (if necessary)
-
-- Change **README.md**
-
-- Change **Screen Example** in `./assets/screen.png`
-
----
-
-#### :zap: Generator
-
-- Run: `yarn gen` or `npm run gen` in terminal
-
-- Follow the instructions
-
----
 
 #### :zap: Technologies
 
 ```
  Axios
- Immer
  React Hook Form
  React Hot Toast
  Styled Components
- Styled Media Query
  Zod
  Zustand
- Plop
 ```
 
 ---
