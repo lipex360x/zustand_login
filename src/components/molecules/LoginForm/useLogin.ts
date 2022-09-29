@@ -9,20 +9,21 @@ export const useLogin = () => {
   const { login } = authStore()
   const navigate = useNavigate()
 
-  const { mutateAsync: mutateLogin, isLoading } = useMutation(
-    loginWithEmailAndPassword,
-    {
-      onSuccess(data) {
-        login(data)
-        navigate('/dashboard')
-      },
-      onError() {
-        toastService.error('User not found')
-      },
+  const {
+    mutateAsync: mutateLogin,
+    isLoading,
+    error,
+  } = useMutation(loginWithEmailAndPassword, {
+    onSuccess(data) {
+      login(data)
+      navigate('/dashboard')
     },
-  )
+    onError() {
+      toastService.error('User not found')
+    },
+  })
 
-  return { mutateLogin, isLoading }
+  return { mutateLogin, isLoading, error }
 }
 
 export default useLogin

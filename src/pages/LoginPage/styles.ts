@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -11,20 +10,8 @@ export const Wrapper = styled.div`
     justify-content: center;
     font-size: ${theme.font.size.small};
 
-    ${media.greaterThan('medium')`
-      font-size: ${theme.font.size.medium}
-    `}
-
-    img {
-      width: 48px;
-      height: 48px;
+    h1 {
+      color: white;
     }
   `}
-`
-
-export const State = styled.div`
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 `

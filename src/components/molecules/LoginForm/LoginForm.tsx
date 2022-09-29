@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/atoms/Button'
@@ -14,29 +15,39 @@ export const LoginForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
+    setFocus,
     formState: { errors, isSubmitting },
   } = useForm<FormInputs>({
     resolver: zodResolver(formSchema),
   })
 
-  const { mutateLogin, isLoading } = useLogin()
+  const { mutateLogin, isLoading, error } = useLogin()
 
   const submitForm = async (data: FormInputs) => {
     await mutateLogin(data)
   }
 
+  useEffect(() => {
+    setFocus('username')
+  }, [setFocus])
+
+  useEffect(() => {
+    if (error) return reset()
+  }, [error, reset])
+
   return (
     <S.Form onSubmit={handleSubmit(submitForm)}>
       <FormContainer>
         <TextField
-          placeholder="Type UserName"
+          placeholder="UserName"
           required
           textError={errors.username?.message}
           {...register('username')}
         />
 
         <TextField
-          placeholder="Type email"
+          placeholder="Password"
           required
           type="password"
           textError={errors.password?.message}
@@ -48,7 +59,7 @@ export const LoginForm = () => {
         </Button>
 
         {isLoading && (
-          <p style={{ color: 'white', textAlign: 'center' }}>Carregando</p>
+          <p style={{ color: 'white', textAlign: 'center' }}>Loading...</p>
         )}
       </FormContainer>
     </S.Form>

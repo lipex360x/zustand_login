@@ -5,10 +5,11 @@ import * as S from './styles'
 
 export const LoginPage = () => {
   return (
-    <S.Wrapper>
-      <Container style={{ width: '400px' }}>
+    <Container style={{ width: '400px' }}>
+      <S.Wrapper>
+        <h1>Login</h1>
         <LoginForm />
-      </Container>
-    </S.Wrapper>
+      </S.Wrapper>
+    </Container>
   )
 }
