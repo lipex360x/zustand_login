@@ -59,7 +59,7 @@ export const LoginForm = () => {
         </Button>
 
         {isLoading && (
-          <p style={{ color: 'white', textAlign: 'center' }}>Loading...</p>
+          <div style={{ color: 'white', textAlign: 'center' }}>Loading...</div>
         )}
       </FormContainer>
     </S.Form>

@@ -25,7 +25,7 @@ export const PrivateLayout = () => {
 
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Link to="/dashboard">Dashboard</Link>
-          <a onClick={handleLogout}>Sair</a>
+          <a onClick={handleLogout}>Logout</a>
         </div>
       </S.Wrapper>
       <Outlet />

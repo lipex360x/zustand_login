@@ -7,7 +7,7 @@ export const LoginPage = () => {
   return (
     <Container style={{ width: '400px' }}>
       <S.Wrapper>
-        <h1>Login</h1>
+        <h1>Zustand Login</h1>
         <LoginForm />
       </S.Wrapper>
     </Container>

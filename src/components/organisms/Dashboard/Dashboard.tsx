@@ -7,7 +7,7 @@ export const Dashboard = () => {
 
   return (
     <S.Wrapper>
-      <span>Hello Dashboard</span>
+      <h1>Dashboard</h1>
     </S.Wrapper>
   )
 }
