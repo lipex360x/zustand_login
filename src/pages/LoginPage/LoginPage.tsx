@@ -3,7 +3,7 @@ import { LoginForm } from '@/components/molecules/LoginForm'
 
 import * as S from './styles'
 
-export const HomePage = () => {
+export const LoginPage = () => {
   return (
     <S.Wrapper>
       <Container style={{ width: '400px' }}>

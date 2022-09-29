@@ -13,6 +13,7 @@ export const DashboardPage = () => {
     logout()
     navigate('/')
   }
+
   return (
     <Container>
       <S.Wrapper>
