@@ -2,27 +2,34 @@ import { Navigate, useLocation, useRoutes } from 'react-router-dom'
 
 import { PrivateLayout } from '@/components/templates/PrivateLayout'
 import { DashboardPage } from '@/pages/DashboardPage'
+import { UserPage } from '@/pages/UserPage'
 
 export const Private = () => {
   console.log('private route')
+
   const location = useLocation()
 
   const privateRoutes = [
     {
-      path: '/dashboard',
+      path: '/',
       element: <DashboardPage />,
+    },
+
+    {
+      path: '/user',
+      element: <UserPage />,
     },
   ]
 
   return useRoutes([
     {
-      path: '/dashboard',
+      path: '/',
       element: <PrivateLayout />,
       children: privateRoutes,
     },
     {
       path: '*',
-      element: <Navigate to="/dashboard" state={{ from: location }} replace />,
+      element: <Navigate to="/" state={{ from: location }} replace />,
     },
   ])
 }

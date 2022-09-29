@@ -8,23 +8,21 @@ export const Public = () => {
 
   const location = useLocation()
 
-  const publicRoutes = [
-    {
-      path: '/',
-      element: <LoginPage />,
-    },
-  ]
-
   return useRoutes([
     {
-      path: '/',
+      path: '/login',
       element: <DefaultLayout />,
-      children: publicRoutes,
+      children: [
+        {
+          index: true,
+          element: <LoginPage />,
+        },
+      ],
     },
 
     {
       path: '*',
-      element: <Navigate to="/" state={{ from: location }} replace />,
+      element: <Navigate to="/login" state={{ from: location }} replace />,
     },
   ])
 }
