@@ -6,8 +6,6 @@ import { NotFoundPage } from '@/pages/NotFoundPage'
 import { UserPage } from '@/pages/UserPage'
 
 export const Private = () => {
-  console.log('private route')
-
   const privateRoutes = [
     {
       path: '/dashboard',

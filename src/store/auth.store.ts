@@ -19,11 +19,13 @@ export const authStore = create<UseAuthProps>((set) => ({
 
   login: (data) => {
     localStorageService.setItem('user', data)
+    localStorageService.setItem('token', data?.token)
     set({ user: data })
   },
 
   logout: () => {
     localStorageService.removeItem('user')
+    localStorageService.removeItem('token')
     set({ user: null })
   },
 }))

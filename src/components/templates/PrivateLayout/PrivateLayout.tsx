@@ -9,8 +9,6 @@ import * as S from './styles'
 export const PrivateLayout = () => {
   const { user, logout } = authStore()
 
-  const { name } = user
-  console.log(user)
   const navigate = useNavigate()
 
   const handleLogout = () => {

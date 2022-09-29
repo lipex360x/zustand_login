@@ -1,4 +1,8 @@
-export const setItem = (key: string, item: string | object | null) => {
+export const setItem = (
+  key: string,
+  item: string | object | null | undefined,
+) => {
+  if (!item) return
   const value = typeof item === 'object' ? JSON.stringify(item) : item
   return window.localStorage.setItem(key, value)
 }
@@ -6,10 +10,7 @@ export const setItem = (key: string, item: string | object | null) => {
 export const getItem = (key: string) => {
   const value = window.localStorage.getItem(key)
 
-  if (!value) {
-    return
-  }
-
+  if (!value) return
   try {
     return JSON.parse(value)
   } catch {
