@@ -4,7 +4,7 @@ import { PrivateLayout } from '@/components/templates/PrivateLayout'
 import { DashboardPage } from '@/pages/DashboardPage'
 
 export const Private = () => {
-  const routes = [
+  const privateRoutes = [
     {
       path: '/dashboard',
       element: <DashboardPage />,
@@ -15,7 +15,7 @@ export const Private = () => {
     {
       path: '/',
       element: <PrivateLayout />,
-      children: routes,
+      children: privateRoutes,
     },
   ])
 }

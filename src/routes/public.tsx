@@ -6,16 +6,18 @@ import { LoginPage } from '@/pages/LoginPage'
 export const Public = () => {
   const location = useLocation()
 
+  const publicRoutes = [
+    {
+      path: '/',
+      element: <LoginPage />,
+    },
+  ]
+
   return useRoutes([
     {
       path: '/',
       element: <DefaultLayout />,
-      children: [
-        {
-          path: '/',
-          element: <LoginPage />,
-        },
-      ],
+      children: publicRoutes,
     },
 
     {
