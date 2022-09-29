@@ -4,7 +4,9 @@ import { DefaultLayout } from '@/components/templates/DefaultLayout'
 import { DashboardPage } from '@/pages/DashboardPage'
 import { LoginPage } from '@/pages/LoginPage'
 
-export const Public = () => {
+export const Private = () => {
+  console.log('private route')
+
   return useRoutes([
     {
       path: '/',
