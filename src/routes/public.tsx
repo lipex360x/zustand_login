@@ -1,7 +1,6 @@
 import { useRoutes } from 'react-router-dom'
 
 import { DefaultLayout } from '@/components/templates/DefaultLayout'
-import { DashboardPage } from '@/pages/DashboardPage'
 import { LoginPage } from '@/pages/LoginPage'
 
 export const Public = () => {
@@ -13,11 +12,6 @@ export const Public = () => {
         {
           path: '/',
           element: <LoginPage />,
-        },
-
-        {
-          path: '/dashboard',
-          element: <DashboardPage />,
         },
       ],
     },

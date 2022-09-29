@@ -16,7 +16,7 @@
         {
           "uuid": "97e70866-c34d-4c32-99d5-fee4bc110784",
           "body": "{\n  \"user\": {\n    \"name\": \"Johnny\",\n    \"email\": \"jrocket@example.com\"\n  },\n  \n  \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2NjQ0MTY4NDIsImV4cCI6MTY5NTk1Mjg0MiwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjoiTWFuYWdlciJ9.j-JtIwRvkbsVJXEyeJSM3tbjjewsR67Etzkj5O5VZiQ\"\n}",
-          "latency": 500,
+          "latency": 0,
           "statusCode": 200,
           "label": "",
           "headers": [

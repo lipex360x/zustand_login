@@ -12,7 +12,6 @@ const queryClient = new QueryClient()
 
 export function App() {
   const { user } = authStore()
-  if (user) console.log('logado')
 
   return (
     <QueryClientProvider client={queryClient}>
