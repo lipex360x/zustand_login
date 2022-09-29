@@ -1,0 +1,49 @@
+{
+  "Template Snippets": {
+    "prefix": "snippetTemplate",
+    "body": [
+      "\"${1:SNIPPET_TITLE}\": {",
+      "  \"prefix\": \"${2:PREFIX}\",",
+      "  \"body\": [",
+      "    \"${3:BODY}\"",
+      "  ]",
+      "},",
+      ""
+    ]
+  },
+
+  "CSS Export Const": {
+    "prefix": "cssExportConst",
+    "body": [
+      "export const ${CONST_NAME} = styled.div`",
+      "  ${() => css``}",
+      "`"
+    ]
+  },
+
+  "Icon Generator": {
+    "prefix": "iconGenerator",
+    "body": [
+      "import SvgContainer, { SvgContainerProps } from '@/components/bosons/SvgContainer';",
+      "",
+      "export const $TM_FILENAME_BASE = (svgContainerProps: Omit<SvgContainerProps, 'children'>) => {",
+      "  return (",
+      "    <SvgContainer {...svgContainerProps}>",
+      "      ",
+      "    </SvgContainer>",
+      "  );",
+      "};"
+    ]
+  },
+
+  "Store Function": {
+    "prefix": "storeFunction()",
+    "body": [
+      "${FUNCTION_NAME}: () => set((state) =>",
+      "  produce(state, (draft) => {",
+      "    // to-do",
+      "  })",
+      "),"
+    ]
+  }
+}
