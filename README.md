@@ -40,7 +40,6 @@
 
   * password: 1234
 
-
 #### :zap: Technologies
 
 ```
